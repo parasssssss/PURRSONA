@@ -2,9 +2,9 @@ from fastapi import APIRouter,Depends
 from pathlib import Path 
 from pydantic import BaseModel
 from typing import List
-from database import get_session
+from .database import get_session
 from sqlmodel import Session,select
-from model import CatPersonality
+from .model import CatPersonality
 import random
 import json 
 
