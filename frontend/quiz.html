@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PURRSONA</title>
+<link rel="icon" type="image/svg+xml" href="/static/images/purrsona-favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/Purrsona_favicon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/static/images/Purrsona_favicon.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Qurova DEMO';
+    src: url('../fonts/QurovaDEMO-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --lime: #d4ff2b;
+    --ink: #0a0a0a;
+    --ink-soft: #161616;
+  }
+  html, body { background: var(--lime); }
+  body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); }
+  .font-display { font-family: 'Archivo Black', sans-serif; }
+  .logo-text {
+    font-family: 'Qurova DEMO', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .pill { border: 2px solid var(--ink); }
+  .cta-btn { background: var(--ink); color: var(--lime); transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease; }
+  .cta-btn:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 0 var(--ink); background: #fff; color: var(--ink); }
+  .option-btn { transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
+  .option-btn:hover { transform: translateY(-2px); border-color: var(--ink); }
+  .option-btn.selected { background: var(--ink); color: var(--lime); border-color: var(--ink); }
+  .hard-shadow { box-shadow: 8px 8px 0 0 var(--ink); }
+  .quiz-card { background: rgba(255,255,255,0.92); backdrop-filter: blur(18px); }
+  .progress-track { background: rgba(10,10,10,0.08); border-radius: 999px; }
+  .progress-fill { background: var(--ink); border-radius: 999px; transition: width 240ms ease; }
+  @media (prefers-reduced-motion: reduce) { .cta-btn, .option-btn, .progress-fill { transition: none; } }
+</style>
+</head>
+<body class="min-h-screen">
+  <header class="max-w-7xl mx-auto px-6 sm:px-10 pt-6 pb-4 flex items-center justify-between">
+    <div class="site-logo font-display text-lg tracking-tight flex items-center gap-2">
+      <div class="flex items-center gap-1 whitespace-nowrap">
+        <div class="w-14 h-14 overflow-hidden flex items-center justify-center -mr-2">
+  <img src="../static/images/Purrsona_logo.png" alt="Purrsona logo" class="w-full h-full object-cover scale-150" />
+</div>
+        <div class="logo-text text-base">PURRSONA</div>
+      </div>
+    </div>
+    <a href="index.html" class="nav-cta cta-btn font-display uppercase text-xs px-4 py-2 rounded-full">Back home</a>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 sm:px-10 pb-16">
+    <div class="quiz-card pill hard-shadow rounded-[32px] border-2 border-[var(--ink)] p-6 sm:p-10">
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-[var(--ink)]/70">Question</p>
+            <h1 class="font-display uppercase text-3xl sm:text-4xl leading-tight">Which Internet Cat Are You?</h1>
+          </div>
+          
+        </div>
+
+        <div class="space-y-5">
+          <div class="progress-track h-3 overflow-hidden">
+            <div id="progressFill" class="progress-fill h-full w-0"></div>
+          </div>
+          <p id="questionCount" class="text-sm uppercase tracking-[0.2em] text-[var(--ink)]/70"></p>
+          <div id="questionText" class="text-2xl sm:text-3xl font-semibold leading-snug"></div>
+        </div>
+
+        <div id="optionsContainer" class="grid gap-4 sm:grid-cols-2"></div>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div></div>
+          <button id="nextButton" class="cta-btn font-display uppercase text-sm px-6 py-4 rounded-full w-full sm:w-auto">Next question</button>
+        </div>
+
+        <p id="hintText" class="text-sm text-[var(--ink)]/65">Loading quiz questions from backend...</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="javascript/quiz.js"></script>
+</body>
+</html>

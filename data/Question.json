@@ -1,0 +1,708 @@
+[
+   {
+      "id":1,
+      "question":"Your alarm just went off.what do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Yeet the phone",
+            "scores":{
+               "CHAOTIC":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Snooze forever",
+            "scores":{
+               "SLEEPY":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Groan and glare",
+            "scores":{
+               "GRUMPY":5
+            }
+         },
+         {
+            "id":4,
+            "text":"Wake up feral",
+            "scores":{
+               "MISCHIEVOUS":4,
+               "CHAOTIC":1
+            }
+         }
+      ]
+   },
+   {
+      "id":2,
+      "question":"You open the group chat and there's 47 unread messages. What now?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Read one, dip",
+            "scores":{
+               "CONFUSED":4
+            }
+         },
+         {
+            "id":2,
+            "text":"Send chaos memes",
+            "scores":{
+               "GOOFY":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Silently judge all",
+            "scores":{
+               "JUDGMENTAL":5
+            }
+         },
+         {
+            "id":4,
+            "text":"17 voice notes",
+            "scores":{
+               "MISCHIEVOUS":4,
+               "FREAKY":1
+            }
+         }
+      ]
+   },
+   {
+      "id":3,
+      "question":"A terrible song comes on at the party. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Secretly change it",
+            "scores":{
+               "MISCHIEVOUS":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Judge in silence",
+            "scores":{
+               "JUDGMENTAL":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Nap through it",
+            "scores":{
+               "SLEEPY":4,
+               "CHILL":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Dance terribly",
+            "scores":{
+               "GOOFY":5
+            }
+         }
+      ]
+   },
+   {
+      "id":4,
+      "question":"It's 2am and you're wide awake. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Rearrange my room",
+            "scores":{
+               "CHAOTIC":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Stalk a stranger's IG",
+            "scores":{
+               "FREAKY":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Exist sadly",
+            "scores":{
+               "GRUMPY":4,
+               "SLEEPY":1
+            }
+         },
+         {
+            "id":4,
+            "text":"One more episode",
+            "scores":{
+               "CHILL":4
+            }
+         }
+      ]
+   },
+   {
+      "id":5,
+      "question":"Your food order comes out wrong. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Eat it, cursed",
+            "scores":{
+               "CHILL":4
+            }
+         },
+         {
+            "id":2,
+            "text":"Write angry review",
+            "scores":{
+               "JUDGMENTAL":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Post it as news",
+            "scores":{
+               "GOOFY":4
+            }
+         },
+         {
+            "id":4,
+            "text":"Spiral instantly",
+            "scores":{
+               "GRUMPY":5
+            }
+         }
+      ]
+   },
+   {
+      "id":6,
+      "question":"You walk into a room and totally forget why. What now?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Stand there blank",
+            "scores":{
+               "CONFUSED":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Blame the vibes",
+            "scores":{
+               "GOOFY":4
+            }
+         },
+         {
+            "id":3,
+            "text":"Lay down instead",
+            "scores":{
+               "SLEEPY":4,
+               "CHILL":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Snoop for no reason",
+            "scores":{
+               "MISCHIEVOUS":4
+            }
+         }
+      ]
+   },
+   {
+      "id":7,
+      "question":"Someone's chewing really loudly next to you. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Internally combust",
+            "scores":{
+               "GRUMPY":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Judge, say nothing",
+            "scores":{
+               "JUDGMENTAL":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Chew louder back",
+            "scores":{
+               "CHAOTIC":4,
+               "GOOFY":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Didn't even notice",
+            "scores":{
+               "CHILL":5
+            }
+         }
+      ]
+   },
+   {
+      "id":8,
+      "question":"Your crush texts back just one word. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Analyze for 3 hours",
+            "scores":{
+               "CONFUSED":4,
+               "FREAKY":1
+            }
+         },
+         {
+            "id":2,
+            "text":"Send unhinged reply",
+            "scores":{
+               "CHAOTIC":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Shrug, move on",
+            "scores":{
+               "CHILL":5
+            }
+         },
+         {
+            "id":4,
+            "text":"Screenshot to friends",
+            "scores":{
+               "GOOFY":4,
+               "JUDGMENTAL":1
+            }
+         }
+      ]
+   },
+   {
+      "id":9,
+      "question":"The fire alarm goes off at school or work. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Sprint like it's real",
+            "scores":{
+               "CHAOTIC":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Slowest walk ever",
+            "scores":{
+               "SLEEPY":4,
+               "CHILL":1
+            }
+         },
+         {
+            "id":3,
+            "text":"Use it to nap outside",
+            "scores":{
+               "SLEEPY":5
+            }
+         },
+         {
+            "id":4,
+            "text":"Start filming content",
+            "scores":{
+               "GOOFY":5
+            }
+         }
+      ]
+   },
+   {
+      "id":10,
+      "question":"Someone hits you with 'we need to talk.' What's your reaction?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Panic immediately",
+            "scores":{
+               "CONFUSED":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Already annoyed",
+            "scores":{
+               "GRUMPY":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Ooh drama, excited",
+            "scores":{
+               "MISCHIEVOUS":4,
+               "FREAKY":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Cool, whatever",
+            "scores":{
+               "CHILL":5
+            }
+         }
+      ]
+   },
+   {
+      "id":11,
+      "question":"You spot your ex out in public. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Duck into a bush",
+            "scores":{
+               "CHAOTIC":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Death stare",
+            "scores":{
+               "JUDGMENTAL":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Wave, feel nothing",
+            "scores":{
+               "CHILL":5
+            }
+         },
+         {
+            "id":4,
+            "text":"Stalk their new fit",
+            "scores":{
+               "FREAKY":5
+            }
+         }
+      ]
+   },
+   {
+      "id":12,
+      "question":"The WiFi cuts out mid-video. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Rage quit life",
+            "scores":{
+               "GRUMPY":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Just... nap now",
+            "scores":{
+               "SLEEPY":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Restart router 12x",
+            "scores":{
+               "CHAOTIC":4,
+               "CONFUSED":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Blame my roommate",
+            "scores":{
+               "JUDGMENTAL":4,
+               "GOOFY":1
+            }
+         }
+      ]
+   },
+   {
+      "id":13,
+      "question":"You just got assigned a group project partner. What's your move?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Do it all myself",
+            "scores":{
+               "GRUMPY":4,
+               "CHILL":1
+            }
+         },
+         {
+            "id":2,
+            "text":"Judge their fonts",
+            "scores":{
+               "JUDGMENTAL":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Vanish completely",
+            "scores":{
+               "SLEEPY":4,
+               "CHAOTIC":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Turn it into chaos",
+            "scores":{
+               "CHAOTIC":5
+            }
+         }
+      ]
+   },
+   {
+      "id":14,
+      "question":"The waiter asks if you're still working on your food. How do you react?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Panic-nod yes",
+            "scores":{
+               "CONFUSED":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Weirdly offended",
+            "scores":{
+               "GRUMPY":4,
+               "JUDGMENTAL":1
+            }
+         },
+         {
+            "id":3,
+            "text":"Ask for the check",
+            "scores":{
+               "CHILL":5
+            }
+         },
+         {
+            "id":4,
+            "text":"Make it weird",
+            "scores":{
+               "FREAKY":4,
+               "GOOFY":1
+            }
+         }
+      ]
+   },
+   {
+      "id":15,
+      "question":"Someone hands you the mic for karaoke. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Full unhinged performance",
+            "scores":{
+               "CHAOTIC":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Hide under the table",
+            "scores":{
+               "SLEEPY":3,
+               "CONFUSED":2
+            }
+         },
+         {
+            "id":3,
+            "text":"Deadpan monotone",
+            "scores":{
+               "GRUMPY":4,
+               "GOOFY":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Weirdly seductive",
+            "scores":{
+               "FREAKY":5
+            }
+         }
+      ]
+   },
+   {
+      "id":16,
+      "question":"Your plans just got cancelled last minute. What's your reaction?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Secretly thrilled",
+            "scores":{
+               "CHILL":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Immediately nap",
+            "scores":{
+               "SLEEPY":5
+            }
+         },
+         {
+            "id":3,
+            "text":"Fake being upset",
+            "scores":{
+               "GOOFY":4,
+               "MISCHIEVOUS":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Actually furious",
+            "scores":{
+               "GRUMPY":5
+            }
+         }
+      ]
+   },
+   {
+      "id":17,
+      "question":"You spot $5 on the ground. What do you do?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Victory scream",
+            "scores":{
+               "CHAOTIC":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Pocket it, sus",
+            "scores":{
+               "MISCHIEVOUS":4
+            }
+         },
+         {
+            "id":3,
+            "text":"Meh, whatever",
+            "scores":{
+               "CHILL":5
+            }
+         },
+         {
+            "id":4,
+            "text":"Suspect a trap",
+            "scores":{
+               "CONFUSED":4,
+               "JUDGMENTAL":1
+            }
+         }
+      ]
+   },
+   {
+      "id":18,
+      "question":"Someone shows up wearing the same outfit as you. What's your reaction?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Judge internally",
+            "scores":{
+               "JUDGMENTAL":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Weirdly flattered",
+            "scores":{
+               "GOOFY":4
+            }
+         },
+         {
+            "id":3,
+            "text":"Change immediately",
+            "scores":{
+               "CHAOTIC":4,
+               "GRUMPY":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Didn't even notice",
+            "scores":{
+               "CHILL":5
+            }
+         }
+      ]
+   },
+   {
+      "id":19,
+      "question":"It's finally bedtime. What happens next?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Instantly out cold",
+            "scores":{
+               "SLEEPY":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Doom scroll for hours",
+            "scores":{
+               "CHAOTIC":4,
+               "CONFUSED":1
+            }
+         },
+         {
+            "id":3,
+            "text":"Overthink everything",
+            "scores":{
+               "GRUMPY":3,
+               "CONFUSED":2
+            }
+         },
+         {
+            "id":4,
+            "text":"Weird 3am ideas",
+            "scores":{
+               "FREAKY":4,
+               "MISCHIEVOUS":1
+            }
+         }
+      ]
+   },
+   {
+      "id":20,
+      "question":"Someone tells you 'you've changed.' How do you respond?",
+      "answers":[
+         {
+            "id":1,
+            "text":"Thank you, obviously",
+            "scores":{
+               "CHILL":5
+            }
+         },
+         {
+            "id":2,
+            "text":"Gasp, offended",
+            "scores":{
+               "GRUMPY":4,
+               "JUDGMENTAL":1
+            }
+         },
+         {
+            "id":3,
+            "text":"Lean into the plot twist",
+            "scores":{
+               "FREAKY":4,
+               "MISCHIEVOUS":1
+            }
+         },
+         {
+            "id":4,
+            "text":"Wait what did I do",
+            "scores":{
+               "CONFUSED":5
+            }
+         }
+      ]
+   }
+]

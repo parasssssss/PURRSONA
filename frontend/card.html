@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PURRSONA</title>
+<link rel="icon" type="image/svg+xml" href="/static/images/purrsona-favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/Purrsona_favicon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/static/images/Purrsona_favicon.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Qurova DEMO';
+    src: url('../fonts/QurovaDEMO-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --lime: #d4ff2b;
+    --ink: #0a0a0a;
+    --paper: #d4b179;
+    --seal: #22563c;
+    --line: rgba(10,10,10,0.22);
+  }
+  html, body { background: var(--lime); }
+  body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); }
+
+  .font-display { font-family: 'Archivo Black', sans-serif; }
+  .logo-text {
+    font-family: 'Qurova DEMO', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .font-mono-id { font-family: 'Space Grotesk', sans-serif; }
+
+  .pill { border: 2px solid var(--ink); }
+  .cta-btn {
+    background: var(--ink);
+    color: var(--lime);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    letter-spacing: 0.08em;
+  }
+  .cta-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+    filter: brightness(1.05);
+  }
+  .cta-btn:active {
+    transform: translate(0, 0);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  }
+
+  /* ---------- ID CARD SHELL (rectangle, compact) ---------- */
+  .card-panel {
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 8px 8px 0 0 var(--ink);
+    border-radius: 28px;
+    animation: fadeInScale 0.55s ease forwards;
+  }
+  .card-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 10%, rgba(255,255,255,0.16), transparent 25%),
+                      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.14), transparent 20%);
+    opacity: 0.14;
+    pointer-events: none;
+  }
+  .card-panel::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px dashed var(--line);
+    pointer-events: none;
+  }
+  .paper-fleck {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(10,10,10,0.12);
+    opacity: 0.75;
+  }
+  .id-rivet {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 999px;
+    background: var(--ink);
+    opacity: 0.95;
+  }
+  .id-hologram {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: conic-gradient(from 90deg, var(--lime), var(--paper), var(--seal), var(--lime));
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    border: 1px solid var(--line);
+  }
+
+  .id-authority-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed var(--line);
+  }
+  
+  .id-authority-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .id-authority-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(10,10,10,0.55);
+  }
+  .id-card-title { text-align: right; }
+  .id-card-title .font-display {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .id-card-title .id-authority-sub {
+    margin-top: 2px;
+  }
+  .accent-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    border: 2px solid rgba(10,10,10,0.12);
+    background: rgba(212,255,43,0.12);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1px rgba(10,10,10,0.05);
+  }
+  .sticker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    min-height: 24px;
+    border-radius: 999px;
+    background: rgba(34,86,60,0.15);
+    color: var(--ink);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: 1px solid rgba(10,10,10,0.08);
+  }
+
+  .id-footer-strip {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 2px dashed var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .id-serial {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: rgba(10,10,10,0.64);
+    text-transform: uppercase;
+  }
+  .id-note {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: rgba(10,10,10,0.45);
+    text-transform: uppercase;
+  }
+  .id-barcode {
+    height: 20px;
+    flex: 1 1 110px;
+    max-width: 160px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--ink) 0px, var(--ink) 2px,
+      transparent 2px, transparent 5px,
+      var(--ink) 5px, var(--ink) 6px,
+      transparent 6px, transparent 10px,
+      var(--ink) 10px, var(--ink) 13px,
+      transparent 13px, transparent 16px
+    );
+    opacity: 0.85;
+  }
+  .id-finetext {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(10,10,10,0.55);
+    max-width: 220px;
+    text-align: right;
+  }
+
+  /* ---------- restyle JS-rendered inner content, scoped, no IDs touched ---------- */
+
+  #cardContent > div.flex.flex-col {
+    display: flex;
+    gap: 22px;
+  }
+  #cardContent > div.flex.flex-col > * + * { margin-top: 0 !important; }
+  #cardContent [class*="tracking-[0.3em]"] {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+  }
+  #cardContent h1.font-display {
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    font-size: 1.5rem !important;
+  }
+  #cardContent .pill {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--paper) !important;
+    box-shadow: inset 0 0 0 1px var(--line);
+    font-size: 0.65rem !important;
+  }
+
+  /* passport-photo-sized frame, portrait ratio, left column */
+  
+#cardContent .photo-block {
+  width: 100%;
+  max-width: 170px;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px !important;
+  background: #ffffff;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  min-height: 260px;
+}
+#cardContent .photo-block img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;        /* kills the small inline-image whitespace gap */
+  margin: 0;
+  position: absolute;
+  inset: 0;
+}
+
+  /* description panel -> compact "particulars" field */
+  #cardContent [class*="rounded-[28px]"] {
+    border-radius: 8px !important;
+    background: var(--paper) !important;
+    position: relative;
+    padding: 26px 16px 14px 16px !important;
+  }
+  #cardContent [class*="rounded-[28px]"]::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: rgba(10,10,10,0.45);
+  }
+  #cardContent [class*="rounded-[28px]"] p { font-size: 0.85rem !important; }
+
+  /* no-result state -> compact "status" field */
+  #cardContent [class*="rounded-[24px]"] {
+    border-radius: 8px !important;
+    background: var(--paper) !important;
+    position: relative;
+    padding: 30px 16px 16px 16px !important;
+  }
+  #cardContent [class*="rounded-[24px]"]::before {
+    content: 'STATUS';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: rgba(10,10,10,0.45);
+  }
+
+  .copy-btn { transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease; }
+  .copy-btn:hover { transform: translateY(-2px); }
+  .button-row button {
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .button-row button:hover { transform: translateY(-2px) scale(1.02); }
+  .button-row button:active { transform: translateY(0) scale(0.99); }
+
+  .card-panel:hover { transform: translateY(-4px); }
+  .card-panel { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+
+  @keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+</head>
+<body class="min-h-screen text-[var(--ink)]">
+  <header class="max-w-2xl mx-auto px-6 sm:px-8 pt-6 pb-4 flex items-center justify-between">
+    <div class="site-logo font-display text-lg tracking-tight flex items-center gap-2">
+      <div class="flex items-center gap-1 whitespace-nowrap">
+        <div class="w-14 h-14 overflow-hidden flex items-center justify-center -mr-2">
+  <img src="../static/images/Purrsona_logo.png" alt="Purrsona logo" class="w-full h-full object-cover scale-150" />
+</div>
+        <div class="logo-text text-base">PURRSONA</div>
+      </div>
+    </div>
+    <a href="index.html" class="nav-cta cta-btn font-display uppercase text-xs px-4 py-2 rounded-full">Back home</a>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-6 sm:px-8 pb-16">
+    <div class="card-panel pill hard-shadow rounded-[10px] border-2 border-[var(--ink)] p-5 sm:p-6">
+     
+      <span class="paper-fleck" style="top:22px; left:72px;"></span>
+      <span class="paper-fleck" style="top:58px; right:70px;"></span>
+      <span class="paper-fleck" style="bottom:84px; left:42px;"></span>
+      <span class="paper-fleck" style="bottom:44px; right:94px;"></span>
+    
+
+      <div class="id-authority-strip">
+        <div class="flex items-center gap-2">
+          <div>
+            <div class="id-authority-name flex items-center gap-1 whitespace-nowrap"><div class="w-14 h-14 overflow-hidden flex items-center justify-center -mr-2">
+  <img src="../static/images/Purrsona_logo.png" alt="Purrsona logo" class="w-full h-full object-cover scale-150" />
+</div><span class="logo-text">PURRSONA</span></div>
+          </div>
+        </div>
+        <div class="id-card-title">
+          <div class="font-display text-xs sm:text-sm tracking-wide"></div>
+
+        </div>
+      </div>
+
+      <div id="cardContent" class="space-y-6"></div>
+
+      <div class="id-footer-strip">
+        <div class="id-barcode"></div>
+        <div class="text-right">
+          
+          <div class="id-note">Certified by PURRSONA</div>
+        </div>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2 mt-5 button-row">
+        <button id="downloadButton" class="copy-btn cta-btn font-display uppercase text-sm px-5 py-3 rounded-full w-full">Download Card</button>
+        <button id="restartButton" class="cta-btn font-display uppercase text-sm px-5 py-3 rounded-full w-full">Try Again</button>
+      </div>
+     
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="javascript/card.js"></script>
+</body>
+</html>

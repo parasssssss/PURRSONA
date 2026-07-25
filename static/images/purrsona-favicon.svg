@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="48" fill="#d4ff2b"/>
+  <rect x="18" y="18" width="220" height="220" rx="42" fill="#0a0a0a" opacity="0.98"/>
+  <image href="Purrsona_logo.png" x="28" y="28" width="200" height="200" preserveAspectRatio="xMidYMid meet" />
+</svg>

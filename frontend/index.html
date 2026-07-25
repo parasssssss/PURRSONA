@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PURRSONA</title>
+<link rel="icon" type="image/svg+xml" href="/static/images/purrsona-favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/Purrsona_favicon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/static/images/Purrsona_favicon.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Qurova DEMO';
+    src: url('../fonts/QurovaDEMO-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --lime: #d4ff2b;
+    --ink: #0a0a0a;
+    --ink-soft: #161616;
+  }
+  html, body { background: var(--lime); }
+  body { font-family: 'Space Grotesk', sans-serif; }
+  .font-display { font-family: 'Archivo Black', sans-serif; }
+  .logo-text {
+    font-family: 'Qurova DEMO', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .cta-btn {
+    background: var(--ink);
+    color: var(--lime);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .cta-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 0 var(--ink);
+    background: #fff;
+    color: var(--ink);
+  }
+  .cta-btn:active {
+    transform: translate(0,0);
+    box-shadow: none;
+  }
+
+  .hard-shadow {
+    box-shadow: 8px 8px 0 0 var(--ink);
+  }
+  .hard-shadow-sm {
+    box-shadow: 4px 4px 0 0 var(--ink);
+  }
+
+  .feature-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .feature-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 0 var(--ink);
+  }
+
+  .pill {
+    border: 2px solid var(--ink);
+  }
+
+  /* Header / logo */
+  .site-logo { display:flex; gap:10px; align-items:center; font-weight:700; }
+  .nav-cta { background:var(--ink); color:var(--lime); padding:8px 14px; border-radius:999px; border:2px solid var(--ink); font-weight:700; letter-spacing:0.04em; }
+  .nav-cta:hover { background:#fff; color:var(--ink); }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+    50% { transform: translateY(-10px) rotate(var(--r, 0deg)); }
+  }
+  .floaty { animation: float 4.5s ease-in-out infinite; }
+  .floaty-delay { animation: float 5.5s ease-in-out infinite; animation-delay: 1s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floaty, .floaty-delay, .marquee-track { animation: none; }
+    .cta-btn, .feature-card { transition: none; }
+  }
+
+  /* Play cards on the right of hero */
+  .play-cards-container { perspective: 1200px; }
+  .play-card { box-shadow: 10px 10px 0 0 rgba(0,0,0,0.12); transition: transform 240ms ease, box-shadow 240ms ease; }
+  .play-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 18px 18px 0 0 rgba(0,0,0,0.14); }
+  .play-card.one { transform: rotate(-8deg); }
+  .play-card.two { transform: rotate(6deg); }
+  .play-card.three { transform: rotate(-2deg); }
+
+  @media (min-width: 1024px) {
+    .play-card.one { left: 6%; top: 6%; }
+    .play-card.two { left: 34%; top: 32%; }
+    .play-card.three { right: 6%; top: 8%; }
+  }
+
+  @media (max-width: 1023px) {
+    .play-cards-container { display:none; }
+  }
+</style>
+</head>
+<body class="min-h-screen text-[var(--ink)]">
+
+  <!-- Top bar -->
+  <header class="max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-10 pt-6 pb-2">
+    <div class="site-logo font-display text-lg tracking-tight">
+      <div class="flex items-center whitespace-nowrap">
+        <div class="w-14 h-14 overflow-hidden flex items-center justify-center -mr-2">
+  <img src="../static/images/Purrsona_logo.png" alt="Purrsona logo" class="w-full h-full object-cover scale-150" />
+</div>
+        <div class="logo-text text-lg">PURRSONA</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="max-w-7xl mx-auto px-6 sm:px-10 pt-10 sm:pt-14 pb-16 grid lg:grid-cols-2 gap-12 items-center">
+
+    <!-- Left: copy -->
+    <div class="flex flex-col gap-6">
+      <!-- hero pill removed to avoid repetition with header -->
+
+      <h1 class="font-display uppercase leading-[0.95] text-5xl sm:text-6xl md:text-7xl">
+        Which Internet<br />
+        <span class="bg-[var(--ink)] text-[var(--lime)] px-2 inline-block mt-1">Cat Are You?</span>
+      </h1>
+
+      <p class="max-w-md text-base sm:text-lg font-medium text-[var(--ink)]/80 leading-relaxed">
+        Answer 5 quick questions and discover which iconic internet cat matches your personality.
+      </p>
+
+
+      <button
+        onclick="startQuiz()"
+        class="cta-btn font-display uppercase text-base sm:text-lg px-8 py-4 rounded-full w-fit mt-2 pill"
+      >
+        Start Quiz →
+      </button>
+    </div>
+
+    <!-- Right: playful spread of 3 playing GIF cards (large screens) -->
+    <div class="hidden lg:block relative h-80">
+      <div class="play-cards-container relative w-full h-full">
+        <div class="play-card one hard-shadow floaty absolute left-0 top-2 w-40 h-44 rounded-2xl overflow-hidden bg-white">
+          <img src="../static/gifs/chill_cat.gif" alt="Chill cat GIF" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="play-card two hard-shadow floaty-delay absolute left-1/3 top-12 w-48 h-56 rounded-2xl overflow-hidden bg-white">
+          <img src="../static/gifs/grumpy_cat.gif" alt="Grumpy cat GIF" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="play-card three hard-shadow floaty absolute right-0 top-4 w-44 h-52 rounded-2xl overflow-hidden bg-white">
+          <img src="../static/gifs/freaky_cat.gif" alt="Freaky cat GIF" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Marquee ticker -->
+  <div class="bg-[var(--ink)] text-[var(--lime)] py-3 overflow-hidden border-y-2 border-[var(--ink)]">
+    <div class="marquee-track font-display uppercase text-sm sm:text-base tracking-wide">
+      <span class="px-4">Chaotic •</span>
+      <span class="px-4">Confused •</span>
+      <span class="px-4">Sleepy •</span>
+      <span class="px-4">Chill •</span>
+      <span class="px-4">Grumpy •</span>
+      <span class="px-4">Goofy •</span>
+      <span class="px-4">Judgmental •</span>
+      <span class="px-4">Mischievous •</span>
+      <span class="px-4">Freaky •</span>
+      <span class="px-4">Chaotic •</span>
+      <span class="px-4">Confused •</span>
+      <span class="px-4">Sleepy •</span>
+      <span class="px-4">Chill •</span>
+      <span class="px-4">Grumpy •</span>
+      <span class="px-4">Goofy •</span>
+      <span class="px-4">Judgmental •</span>
+      <span class="px-4">Mischievous •</span>
+      <span class="px-4">Freaky •</span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="max-w-7xl mx-auto px-6 sm:px-10 py-16">
+    <p class="text-xs font-bold uppercase tracking-widest mb-2 text-[var(--ink)]/60"></p>
+    <h2 class="font-display uppercase text-4xl sm:text-5xl mb-6 leading-[1.05]">
+      The Internet Cat Hall of Fame
+    </h2>
+
+    <p class="max-w-2xl text-[var(--ink)]/80 mb-8">Every result is based on your answers. Which internet-famous cat will you end up as?</p>
+
+    <div id="collections-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t-2 border-[var(--ink)] py-6">
+    <p class="text-center text-xs font-semibold text-[var(--ink)]/70">
+      It's a cat's world. We're just living in it. Huh?
+    </p>
+  </footer>
+
+  <script>
+    function startQuiz() {
+      window.location.href = 'quiz.html';
+    }
+  </script>
+
+  <script>
+    const collections = [
+      { key: 'Chaotic', emoji: '🔥', desc: 'Spontaneous, a little wild, memeworthy energy.' },
+      { key: 'Sleepy', emoji: '😴', desc: 'Calm, slow-moving, always ready for a nap.' },
+      { key: 'Grumpy', emoji: '😾', desc: 'Sass and that iconic unimpressed stare.' },
+      { key: 'Goofy', emoji: '😂', desc: 'The clown of the internet — ridiculous energy.' },
+      { key: 'Judgmental', emoji: '🧐', desc: 'Sharp eyes, sharper opinions.' },
+      { key: 'Confused', emoji: '🌀', desc: 'Perpetually bewildered and wholesome.' },
+      { key: 'Freaky', emoji: '🧪', desc: 'Weird, wild, and uniquely internet.' },
+      { key: 'Mischievous', emoji: '🎭', desc: 'Plotting zoomies and perfectly timed chaos.' },
+      { key: 'Chill', emoji: '🐾', desc: 'Gentle vibes, easy purrs.' }
+    ];
+
+    const catCards = [
+      { img: '../static/images/Ben(Huh cat).jpg', gif: '../static/gifs/cat-huh.gif', title: 'Huh Cat', tag: 'Big mood', category: 'Confused' },
+      { img: '../static/images/chill_cat.jpg', gif: '../static/gifs/chill_cat.gif', title: 'Chill Cat', tag: 'Very unbothered', category: 'Chill' },
+      { img: '../static/images/freaky_cat_rigby.jpg', gif: '../static/gifs/freaky_cat.gif', title: 'Freaky Cat', tag: 'Internet goblin', category: 'Freaky' },
+      { img: '../static/images/goofycat.jpg', gif: '../static/gifs/goofy_cat.gif', title: 'Goofy Cat', tag: 'Main character energy', category: 'Goofy' },
+      { img: '../static/images/Grumpy_cat.jpg', gif: '../static/gifs/grumpy_cat.gif', title: 'Grumpy Cat', tag: 'Sass specialist', category: 'Grumpy' },
+      { img: '../static/images/Judgemental_cat_luna.jpg', gif: '../static/gifs/judgemental_cat.gif', title: 'Judgy Cat', tag: '10/10 shade', category: 'Judgmental' },
+      { img: '../static/images/Larry_the_Cat.jpg', gif: '../static/gifs/larry.gif', title: 'Larry', tag: 'Distinguished chaos', category: 'Chaotic' },
+      { img: '../static/images/mischief_cat.jpg', gif: '../static/gifs/mischef_cat.gif', title: 'Mischief Cat', tag: 'Plotting something', category: 'Mischievous' },
+      { img: '../static/images/Sleepycat.jpg', gif: '../static/gifs/sleepy_cat.gif', title: 'Sleepy Cat', tag: 'Always tired', category: 'Sleepy' }
+    ];
+
+    function createCardElement(c, small = false) {
+      const card = document.createElement('article');
+      card.className = (small ? 'cat-thumb' : 'cat-card') + ' pill hard-shadow-sm rounded-[12px] bg-white overflow-hidden';
+
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'relative overflow-hidden ' + (small ? 'h-36' : 'h-56');
+
+      const img = document.createElement('img');
+      img.src = c.img;
+      img.alt = c.title;
+      img.className = 'w-full h-full object-cover transition-transform duration-300';
+      img.loading = 'lazy';
+
+      const overlay = document.createElement('div');
+      overlay.className = 'absolute inset-0 bg-black/0 flex items-center justify-center text-[13px] text-white font-semibold';
+      overlay.style.transition = 'background 160ms ease';
+      overlay.innerHTML = '';
+
+      imgWrap.appendChild(img);
+      imgWrap.appendChild(overlay);
+
+      // Hover swap to GIF
+      imgWrap.addEventListener('mouseenter', () => {
+        overlay.style.background = 'linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.15))';
+        img.dataset.orig = img.src;
+        img.src = c.gif;
+      });
+      imgWrap.addEventListener('mouseleave', () => {
+        overlay.style.background = 'transparent';
+        if (img.dataset.orig) img.src = img.dataset.orig;
+      });
+
+      const body = document.createElement('div');
+      body.className = 'p-3';
+      body.innerHTML = `
+        <div class="flex items-center justify-between">
+          <p class="font-display uppercase text-sm">${c.title}</p>
+          <span class="rounded-full bg-[var(--lime)] px-2 py-1 text-[10px] font-bold uppercase">${c.tag}</span>
+        </div>
+      `;
+
+      card.appendChild(imgWrap);
+      if (!small) card.appendChild(body);
+      return card;
+    }
+
+    function buildCollections() {
+      const grid = document.getElementById('collections-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      collections.forEach(col => {
+        const box = document.createElement('div');
+        box.className = 'feature-card pill hard-shadow-sm rounded-2xl bg-white px-6 py-4 flex flex-col gap-3';
+
+        const head = document.createElement('div');
+        head.className = 'flex items-start gap-3';
+        head.innerHTML = `<span class="text-3xl">${col.emoji}</span><div><p class="font-display uppercase text-sm">${col.key}</p><p class="text-sm text-[var(--ink)]/70">${col.desc}</p></div>`;
+
+        box.appendChild(head);
+
+        // add thumbs for cats in this category
+        const thumbs = document.createElement('div');
+        thumbs.className = 'mt-4 grid grid-cols-2 gap-3';
+        const matches = catCards.filter(cc => cc.category === col.key);
+        if (matches.length === 0) {
+          const empty = document.createElement('p');
+          empty.className = 'text-sm text-[var(--ink)]/60';
+          empty.textContent = 'No cards yet — coming soon.';
+          box.appendChild(empty);
+        } else {
+          matches.forEach(m => thumbs.appendChild(createCardElement(m, true)));
+          box.appendChild(thumbs);
+        }
+
+        grid.appendChild(box);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', buildCollections);
+  </script>
+
+</body>
+</html>
