@@ -21,10 +21,10 @@ function renderCard() {
 const categoryEmoji = getCategoryEmoji(result.category);
 let imageUrl;
 if (result.gif_path){
-imageUrl=`/static/${result.gif_path}`;
+imageUrl=`https://purrsona.onrender.com/static/${result.gif_path}`;
 }
 else{
-    imageUrl=`/static/${result.image_path}`
+    imageUrl=`https://purrsona.onrender.com/static/${result.image_path}`
 }
   cardContent.innerHTML = `
     <div class="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
