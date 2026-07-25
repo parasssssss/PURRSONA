@@ -28,7 +28,12 @@ else{
 }
   cardContent.innerHTML = `
     <div class="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
-      ${imageUrl ? `<div class="photo-block mx-auto md:mx-0 rounded-[28px] overflow-hidden border-2 border-[var(--ink)] shadow-[0_14px_40px_-20px_rgba(0,0,0,0.75)]"><img src="${imageUrl}" alt="${result.display_name}" class="w-full h-full object-cover" /></div>` : ''}
+      ${imageUrl ? `<div class="photo-block mx-auto md:mx-0 rounded-[28px] overflow-hidden border-2 border-[var(--ink)] shadow-[0_14px_40px_-20px_rgba(0,0,0,0.75)]"><img
+    src="${imageUrl}"
+    crossorigin="anonymous"
+    alt="${result.display_name}"
+    class="w-full h-full object-cover"
+/></div>` : ''}
 
       <div class="md:flex-1 flex flex-col justify-between gap-6">
         <div class="flex flex-wrap items-center justify-between gap-4">
