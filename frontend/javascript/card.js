@@ -38,8 +38,8 @@ else{
       <div class="md:flex-1 flex flex-col justify-between gap-6">
         <div class="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p class="font-display text-4xl tracking-tight uppercase leading-none text-[var(--ink)]">${(result.display_name || 'Luna').toString().toUpperCase()}</p>
-            <p class="text-base text-[var(--ink)]/70 mt-2 uppercase tracking-[0.16em]">${result.title || 'Master of Side-Eye'}</p>
+            <p class="font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight uppercase leading-none text-[var(--ink)]">${(result.display_name || 'Luna').toString().toUpperCase()}</p>
+            <p class="text-lg sm:text-xl text-[var(--ink)]/70 mt-2 uppercase tracking-[0.16em]">${result.title || 'Master of Side-Eye'}</p>
           </div>
           <div class="accent-pill">
             <span>${categoryEmoji}</span>
@@ -48,7 +48,7 @@ else{
         </div>
 
         <div class="rounded-[28px] border-2 border-[var(--ink)] bg-white p-6 space-y-4">
-          <p class="text-[var(--ink)]/90 leading-relaxed">${result.description || 'You silently judge everyone while pretending you are not.'}</p>
+          <p class="text-lg sm:text-xl leading-relaxed text-[var(--ink)]/90">${result.description || 'You silently judge everyone while pretending you are not.'}</p>
 
         </div>
       </div>
