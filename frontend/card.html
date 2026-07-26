@@ -324,14 +324,6 @@
   }
 </style>
 </head>
-<script>
-if (window.location.search.includes("debug=true")) {
-  const script = document.createElement("script");
-  script.src = "https://cdn.jsdelivr.net/npm/eruda";
-  script.onload = () => eruda.init();
-  document.body.appendChild(script);
-}
-</script>
 <body class="min-h-screen text-[var(--ink)]">
   <header class="max-w-2xl mx-auto px-6 sm:px-8 pt-6 pb-4 flex items-center justify-between">
     <div class="site-logo font-display text-lg tracking-tight flex items-center gap-2">
@@ -393,5 +385,13 @@ if (window.location.search.includes("debug=true")) {
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="javascript/card.js"></script>
+  <script>
+if (window.location.search.includes("debug=true")) {
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/eruda";
+  script.onload = () => eruda.init();
+  document.body.appendChild(script);
+}
+</script>
 </body>
 </html>
