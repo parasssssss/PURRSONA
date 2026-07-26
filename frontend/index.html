@@ -116,9 +116,13 @@
   }
 </style>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script>
-  eruda.init();
+if (window.location.search.includes("debug=true")) {
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/eruda";
+  script.onload = () => eruda.init();
+  document.body.appendChild(script);
+}
 </script>
 <body class="min-h-screen text-[var(--ink)]">
 
