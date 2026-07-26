@@ -14,7 +14,7 @@
 <style>
   @font-face {
     font-family: 'Qurova DEMO';
-    src: url('../fonts/QurovaDEMO-Bold.otf') format('opentype');
+    src: url('./fonts/QurovaDEMO-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -324,6 +324,10 @@
   }
 </style>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+<script>
+  eruda.init();
+</script>
 <body class="min-h-screen text-[var(--ink)]">
   <header class="max-w-2xl mx-auto px-6 sm:px-8 pt-6 pb-4 flex items-center justify-between">
     <div class="site-logo font-display text-lg tracking-tight flex items-center gap-2">

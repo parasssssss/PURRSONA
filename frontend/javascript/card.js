@@ -106,7 +106,7 @@ async function downloadCardImage() {
       scale: Math.max(2, window.devicePixelRatio || 1), // sharper export
       useCORS: true,
       logging: false,
-      allowTaint: true,
+      allowTaint: false,
       imageTimeout: 20000,
       onclone: (clonedDoc) => {
         const clonedPanel = clonedDoc.querySelector('.card-panel');
